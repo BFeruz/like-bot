@@ -20,6 +20,14 @@ def is_user(chat_id: str) -> bool:
 
     return chat_id in data.keys()
 
+def get_user(chat_id: str) -> bool:
+    data = read_db()
+
+    if not is_user(chat_id):
+        return False
+
+    return data[chat_id]
+
 def add_user(chat_id: str):
     data = read_db()
 
